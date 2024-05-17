@@ -2,100 +2,85 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-export default function AddEmpleado() {
+export default function AddPerfil() {
 
     let navigate = useNavigate()
 
-    const [empleado, setEmpleado] = useState({
-        id: undefined,
-        nombre: "",
-        direccion: "",
-        telefono: undefined,
-        cargo: ""
+    const [perfil, setPerfil] = useState({
+        empId: undefined,
+        habilidades: "",
+        experencias: "",
+        certificaciones: ""
+        
     })
 
-    const { id, nombre, direccion, telefono, cargo } = empleado
+    const { empId, habilidades, experencias, certificaciones} = perfil
 
     const onInputChange = (e) => {
-        setEmpleado({ ...empleado, [e.target.name]: e.target.value })
+        setPerfil({ ...perfil, [e.target.name]: e.target.value })
     };
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:8080/empleado", empleado)
+        await axios.post("http://localHost:8080/perfil", perfil)
         navigate("/")
     };
 
     return (
-
-
         <div className='container'>
             <div className='row'>
                 <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
-                    <h2 className='text-center m-4'> Register Empleado</h2>
+                    <h2 className='text-center m-4'> Register Perfil</h2>
                     <form onSubmit={(e) => onSubmit(e)}>
                         <div className='mb-3'>
-                            <label htmlFor='Id' className='form-label'>
-                                Id
+                            <label htmlFor='EmpId' className='form-label'>
+                                EmpId
                             </label>
                             <input
                                 type={"text"}
                                 className='form-control'
-                                placeholder='Enter Id'
-                                name="id"
-                                value={id}
+                                placeholder='Enter employee Id'
+                                name="empId"
+                                value={empId}
                                 onChange={(e) => onInputChange(e)}
                             />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='Nombre' className='form-label'>
-                                Name
+                            <label htmlFor='Habilidades' className='form-label'>
+                                Habilidades
                             </label>
                             <input
                                 type={"text"}
                                 className='form-control'
-                                placeholder='Enter Name'
-                                name="nombre"
-                                value={nombre}
+                                placeholder='Enter abilities'
+                                name="habilidades"
+                                value={habilidades}
                                 onChange={(e) => onInputChange(e)}
                             />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='Direccion' className='form-label'>
-                                Direction
+                            <label htmlFor='Experencias' className='form-label'>
+                                Experencias
                             </label>
                             <input
                                 type={"text"}
                                 className='form-control'
-                                placeholder='Enter Direction'
-                                name="direccion"
-                                value={direccion}
+                                placeholder='Enter Expiriences'
+                                name="experencias"
+                                value={experencias}
                                 onChange={(e) => onInputChange(e)}
                             />
                         </div>
                         <div className='mb-3'>
-                            <label htmlFor='Telefono' className='form-label'>
-                                Phone Number
+                            <label htmlFor='Certificaciones' className='form-label'>
+                                Certificaciones
                             </label>
                             <input
                                 type={"text"}
                                 className='form-control'
-                                placeholder='Enter Phone Number'
-                                name="telefono"
-                                value={telefono}
-                                onChange={(e) => onInputChange(e)}
-                            />
-                        </div>
-                        <div className='mb-3'>
-                            <label htmlFor='Cargo' className='form-label'>
-                                Charge
-                            </label>
-                            <input
-                                type={"text"}
-                                className='form-control'
-                                placeholder='Enter Charge'
-                                name="cargo"
-                                value={cargo}
+                                placeholder='Enter Certificasions'
+                                name="certificaciones"
+                                value={certificaciones}
                                 onChange={(e) => onInputChange(e)}
                             />
                         </div>

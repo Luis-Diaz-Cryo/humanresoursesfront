@@ -15,7 +15,7 @@ export default function ViewEmpleado() {
     const { eid } = useParams();
 
     useEffect(()=>{
-        loadEmpleados()
+        loadEmpleados();
     },[])   
     
     const loadEmpleados= async ()=>{
@@ -26,7 +26,7 @@ export default function ViewEmpleado() {
     <div className='container'>
         <div className='row'>
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
-                <h2 className='text-center m-4'>User Details</h2>
+                <h2 className='text-center m-4'>Empleado Details</h2>
                 <div className='card'>
                     <div className='card-header'>
                     Details of Empleado

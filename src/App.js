@@ -6,6 +6,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddEmpleado from "./entities/empleado/AddEmpleado";
 import EditEmpleado from "./entities/empleado/EditEmpleado";
 import ViewEmpleado from "./entities/empleado/ViewEmpleado";
+import AddPerfil from "./entities/perfil/AddPerfil";
+import EditPerfil from "./entities/perfil/EditPerfil"
+import ViewPerfil from './entities/perfil/ViewPerfil'
 
 
 function App() {
@@ -19,6 +22,12 @@ function App() {
           <Route exact path="/addEmpleado" element={<AddEmpleado />} />
           <Route exact path="/editEmpleado/:eid" element={<EditEmpleado />} />
           <Route exact path="/viewEmpleado/:eid" element={<ViewEmpleado />} />
+          <Route exact path="/addPerfil" element={<AddPerfil />} />
+          <Route exact path="/editPerfil/:emId" element={<EditPerfil />} />
+          <Route exact path="/viewPerfil/:emId" element={<ViewPerfil />} />
+          <Route exact path="/addRol" element={<AddEmpleado />} />
+          <Route exact path="/editRol/:nomRol" element={<EditEmpleado />} />
+          <Route exact path="/viewRol/:nomRol" element={<ViewEmpleado />} />
         </Routes>
       </Router>
     </div>
