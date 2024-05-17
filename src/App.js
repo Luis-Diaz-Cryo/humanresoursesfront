@@ -9,6 +9,9 @@ import ViewEmpleado from "./entities/empleado/ViewEmpleado";
 import AddPerfil from "./entities/perfil/AddPerfil";
 import EditPerfil from "./entities/perfil/EditPerfil"
 import ViewPerfil from './entities/perfil/ViewPerfil'
+import AddRol from "./entities/rol/AddRol";
+import EditRol from "./entities/rol/EditRol";
+import ViewRol from "./entities/rol/ViewRol";
 
 
 function App() {
@@ -25,9 +28,9 @@ function App() {
           <Route exact path="/addPerfil" element={<AddPerfil />} />
           <Route exact path="/editPerfil/:emId" element={<EditPerfil />} />
           <Route exact path="/viewPerfil/:emId" element={<ViewPerfil />} />
-          <Route exact path="/addRol" element={<AddEmpleado />} />
-          <Route exact path="/editRol/:nomRol" element={<EditEmpleado />} />
-          <Route exact path="/viewRol/:nomRol" element={<ViewEmpleado />} />
+          <Route exact path="/addRol" element={<AddRol />} />
+          <Route exact path="/editRol/:nomRol" element={<EditRol />} />
+          <Route exact path="/viewRol/:nomRol" element={<ViewRol />} />
         </Routes>
       </Router>
     </div>

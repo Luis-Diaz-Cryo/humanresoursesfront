@@ -8,10 +8,6 @@ export default function Home() {
     const [Perfiles, setPerfiles] = useState([])
     const [Roles, setRoles] = useState([])
 
-    const { id } = useParams()
-    const { empId } = useParams()
-    const { rolNom } = useParams()
-
     useEffect(() => {
         loadEmpleados();
         loadPerfiles();
@@ -41,6 +37,10 @@ export default function Home() {
     const deletePerfil = async (empId) => {
         await axios.delete(`http://localhost:8080/perfil/borrar/${empId}`)
         loadPerfiles()
+    }
+    const deleteRol = async (nombre) => {
+        await axios.delete(`http://localHost:8080/role/borrar/${nombre}`)
+        loadRoles()
     }
 
     return (
@@ -138,9 +138,9 @@ export default function Home() {
                                     <td>{rol.nombre}</td>
                                     <td>{rol.responsibilidades}</td>
                                     <td>
-                                        <Link className='btn btn-primary mx-2' to={`/viewPerfil/${rol.nombre}`}>View</Link>
-                                        <Link className='btn btn-outline-primary mx-2' to={`/editEmpleado/${rol.nombre}`}>Edit</Link>
-                                        <button className='btn btn-danger mx-2' onClick={() => deleteEmpleado(rol.nombre)}>Delete</button>
+                                        <Link className='btn btn-primary mx-2' to={`/viewRol/${rol.nombre}`}>View</Link>
+                                        <Link className='btn btn-outline-primary mx-2' to={`/editRol/${rol.nombre}`}>Edit</Link>
+                                        <button className='btn btn-danger mx-2' onClick={() => deleteRol(rol.nombre)}>Delete</button>
                                     </td>
                                 </tr>
 

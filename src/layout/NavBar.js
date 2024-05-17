@@ -21,7 +21,7 @@ export default function NavBar() {
 
                     <Link className='btn btn-outline-light' to="addEmpleado">Add Empleado</Link>
                     <Link className='btn btn-outline-light' to="addPerfil">Add Perfil</Link>
-                    <Link className='btn btn-outline-light' to="addEmpleado">Add Rol</Link>
+                    <Link className='btn btn-outline-light' to="addRol">Add Rol</Link>
                 </div>
             </nav>
 
