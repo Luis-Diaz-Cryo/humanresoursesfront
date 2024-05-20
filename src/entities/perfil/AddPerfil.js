@@ -26,6 +26,7 @@ export default function AddPerfil() {
         navigate("/")
     };
 
+    
     return (
         <div className='container'>
             <div className='row'>
